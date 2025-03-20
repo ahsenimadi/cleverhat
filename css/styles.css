@@ -1,0 +1,196 @@
+:root {
+    --first: #FFCB00;
+    --second: #000000;
+    --third: #F2F8FE;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    padding: 16px;
+    background: var(--first);
+    border: 1px solid var(--second);
+}
+
+/* Menu Button */
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    padding: 18px;
+    background: #fff;
+    border: 1px solid var(--second);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: var(--second);
+    text-transform: uppercase;
+}
+
+/* Menu Bar (Hidden by Default) */
+.menubar {
+    background: var(--bs-gray-dark);
+    max-width: 0;
+    height: 60px;
+    align-items: center;
+    overflow: hidden;
+    display: flex;
+    transition: max-width 2s ease-in-out, color .5s ease;
+    li {
+        scale: 0;
+        overflow: hidden;
+        transition: scale ease-in-out .5s;
+    }
+    a {
+        color: var(--third);
+        font-weight: 600;
+        opacity: 0;
+        transition: opacity ease 3s, color ease 1s;
+    }
+    a:hover {
+        color: var(--first);
+    }
+}
+
+/* Show menu when open */
+.menubar.open {
+    max-width: 100%;
+    li {
+        scale: 1;
+    }
+    a {
+        opacity: 1;
+    }
+}
+
+.menubar.open + .menu {
+    background: var(--bs-dark);
+}
+
+.menubar.open + .menu h2 {
+    color: var(--first);
+}
+
+/* Let's Talk Button */
+.talk-btn, .about-btn, .service-btn {
+    background: var(--first);
+    color: var(--second);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 18px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid var(--second);
+}
+
+.talk-btn:hover, .about-btn:hover, .service-btn:hover {
+    background: #d6a600;
+}
+
+.banner, .section1, .section2, .section, .services {
+    min-height: 100vh;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.banner video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+.about, .services {
+    min-height: 100vh;
+    background: var(--third);
+}
+
+.section1, .section2 {
+    display: flex;
+    align-items: center;
+}
+
+.section1 h2 {
+    font-size: 120px;
+}
+
+.section2 p {
+    font-size: 48px;
+}
+
+.services h3 {
+    font-size: 54px;
+    margin-bottom: 3rem;
+}
+
+.services p {
+    font-size: 40px;
+}
+
+.services .section2 {
+    overflow: hidden;
+    position: relative;
+}
+
+.services .content {
+    display: flex;
+    width: calc(300% + 40px); /* Adjust for spacing */
+    gap: 20px; /* Ensures space between services */
+}
+
+.services .content > div {
+    width: calc(100% - 20px);
+    flex-shrink: 0;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menubar {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        max-width: auto;
+        padding: 0;
+        max-height: 0;  /* 🛠️ FIX: Hide it initially */
+        overflow: hidden; /* Prevent content from showing */
+        transition: max-height 0.5s ease-in-out;
+    }
+
+    .menubar.open {
+        max-height: 300px;
+        padding: 10px 0;
+    }
+
+    .menu {
+        position: relative;
+        z-index: 10;
+    }
+}
