@@ -194,3 +194,24 @@ body {
         z-index: 10;
     }
 }
+
+.background-layer {
+  z-index: -1;
+  transition: opacity 0.5s ease-in-out;
+  will-change: transform, opacity;
+}
+
+.works { 
+    h2 {
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: transform 0.8s ease, opacity 0.8s ease;
+    }
+    p {
+        line-height: 1.8;
+    }
+}
+
+.pin-container {
+  overflow: hidden;
+}

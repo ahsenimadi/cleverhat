@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const [showButton, setShowButton] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY > 100) {
-      setShowButton(true);
-    } else {
-      setShowButton(false);
-    }
+    setShowButton(window.scrollY > 100);
   };
 
   useEffect(() => {
@@ -32,26 +29,23 @@ const Footer = () => {
           <div className="col-md mb-4">
             <h5 className="text-uppercase mb-4">Quick Links</h5>
             <ul className="list-unstyled d-flex flex-column">
-              <li className="nav-item mb-2">
-                <a href="/" className="text-second nav-link">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="/about" className="text-second nav-link">
-                  About Us
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="/services" className="text-second nav-link">
-                  Services
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a href="/contact" className="text-second nav-link">
-                  Contact Us
-                </a>
-              </li>
+              {[
+                "Home",
+                "About Us",
+                "Services",
+                "Our Works",
+                "Careers",
+                "Contact Us",
+              ].map((link, index) => (
+                <li key={index} className="nav-item mb-2">
+                  <a
+                    href={`/${link.toLowerCase().replace(/ /g, "-")}`}
+                    className="text-second nav-link d-inline-block"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="col-md mb-4">
@@ -69,65 +63,36 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-md-6 my-auto">
-            <ul className="nav justify-content-end">
-              <li className="nav-item mb-2">
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-second nav-link"
-                >
-                  <i className="fa-brands fa-facebook fa-2x"></i>
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-second nav-link"
-                >
-                  <i className="fa-brands fa-linkedin fa-2x"></i>
-                </a>
-              </li>
-              <li className="nav-item mb-2">
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-second nav-link"
-                >
-                  <i className="fa-brands fa-instagram fa-2x"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-md-6">
-            <p className="mb-0 py-2">
-              Copyright © 2025 Cleverhat. All rights reserved.
-            </p>
-          </div>
-          <div className="col-md-6">
-            <ul className="nav justify-content-end">
-              <li className="nav-item">
-                <a href="/privacy-policy" className="text-second nav-link">
-                  Privacy Policy
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="/terms-of-service" className="text-second nav-link">
-                  Terms of Service
-                </a>
-              </li>
+            <ul className="nav justify-content-start justify-content-md-end">
+              {["facebook", "twitter", "linkedin", "instagram", "youtube"].map(
+                (platform, index) => (
+                  <li key={index} className="nav-item mb-2">
+                    <a
+                      href={`https://${platform}.com/cleverhat`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-second nav-link"
+                    >
+                      <i className={`fa-brands fa-${platform}`}></i>
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </div>
         {showButton && (
-          <button className="back-to-top" onClick={() => window.scrollTo(0, 0)}>
+          <motion.button
+            className="back-to-top"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.4 }}
+          >
             <i className="fa-solid fa-arrow-up-from-bracket"></i>
-          </button>
+          </motion.button>
         )}
-        <div className="text-center mt-4"></div>
       </div>
     </footer>
   );

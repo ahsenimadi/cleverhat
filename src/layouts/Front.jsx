@@ -8,9 +8,8 @@ const Front = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 3500);
+    const timer = setTimeout(() => setLoading(false), 3500);
+    return () => clearTimeout(timer);
   }, []);
   return loading ? (
     <LogoLoader />

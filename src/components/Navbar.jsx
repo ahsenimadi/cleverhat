@@ -10,8 +10,8 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="fixed-top mt-3 mt-md-5">
-        <div className="container">
+      <div className="fixed-top mt-3 mt-md-3">
+        <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-7 col-md-9 d-flex align-items-center">
               <div className="logo">

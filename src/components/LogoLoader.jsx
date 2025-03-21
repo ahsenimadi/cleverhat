@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import gsap from "gsap";
+import { motion } from "framer-motion";
 
 const LogoLoader = () => {
   const [loadingPercentage, setLoadingPercentage] = useState(0);
@@ -18,17 +18,13 @@ const LogoLoader = () => {
     return () => clearInterval(loadingInterval);
   }, []);
 
-  useEffect(() => {
-    gsap.to(".water", {
-      height: `${loadingPercentage}%`,
-      duration: 0.2,
-      ease: "power2.out",
-    });
-  }, [loadingPercentage]);
-
   return (
     <div className="logo-wrapper">
-      <div className="water"></div>
+      <motion.div
+        className="water"
+        animate={{ height: `${loadingPercentage}%` }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
+      ></motion.div>
       <div className="loading-text">Loading... {loadingPercentage}%</div>
     </div>
   );
