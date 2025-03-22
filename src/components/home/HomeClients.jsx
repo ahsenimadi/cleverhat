@@ -5,7 +5,7 @@ const HomeClients = () => {
   // Generate 20 client images
   const clients = Array.from(
     { length: 20 },
-    (_, i) => `/images/clients/${i + 1}.png`
+    (_, i) => `./images/clients/${i + 1}.png`
   );
 
   // Animation Variants

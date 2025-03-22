@@ -9,10 +9,10 @@ const HomeVideo = () => {
           loop
           muted
           playsInline
-          poster="images/logo.png"
+          poster="./images/logo.png"
           aria-label="Promotional background video showcasing our services"
         >
-          <source src="videos/background.mp4" type="video/mp4" />
+          <source src="./videos/background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>

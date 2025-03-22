@@ -5,25 +5,25 @@ const HomeServices = () => {
   const services = [
     {
       title: "Content Creative",
-      image: "images/content.png",
+      image: "./images/content.png",
       description:
         "Innovative storytelling and dynamic visuals that captivate audiences, transforming ideas into powerful, memorable brand experiences.",
     },
     {
       title: "Digital Marketing",
-      image: "images/digital.png",
+      image: "./images/digital.png",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi hic earum fugiat provident enim rerum non laudantium dolor nostrum.",
     },
     {
       title: "Web Development",
-      image: "images/web.png",
+      image: "./images/web.png",
       description:
         "Lorem, ipsum dolor sit amet consectetur, adipisicing elit. A cum mollitia, earum necessitatibus aut, dolor!",
     },
     {
       title: "SEO Optimization",
-      image: "images/seo.png",
+      image: "./images/seo.png",
       description:
         "Optimize your online presence and rank higher on search engines with our cutting-edge SEO strategies.",
     },

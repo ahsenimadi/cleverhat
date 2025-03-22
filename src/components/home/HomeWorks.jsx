@@ -3,11 +3,14 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 const HomeWorks = () => {
   const works = [
-    { title: "EREENA", image: "images/works/1.webp" },
-    { title: "LAVIVER", image: "images/works/2.jpg" },
-    { title: "GMR MANOHAR INTERNATIONAL AIRPORT", image: "images/works/3.jpg" },
-    { title: "VARNI", image: "images/works/4.jpg" },
-    { title: "BOND.AI", image: "images/works/5.png" },
+    { title: "EREENA", image: "./images/works/1.webp" },
+    { title: "LAVIVER", image: "./images/works/2.jpg" },
+    {
+      title: "GMR MANOHAR INTERNATIONAL AIRPORT",
+      image: "./images/works/3.jpg",
+    },
+    { title: "VARNI", image: "./images/works/4.jpg" },
+    { title: "BOND.AI", image: "./images/works/5.png" },
   ];
 
   const [textColors, setTextColors] = useState([]);

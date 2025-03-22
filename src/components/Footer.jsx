@@ -58,8 +58,8 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-6 my-auto">
             <div className="d-flex">
-              <img src="images/logo2.png" width="100px" alt="partner 1" />
-              <img src="images/logo3.png" width="100px" alt="partner 2" />
+              <img src="./images/logo2.png" width="100px" alt="partner 1" />
+              <img src="./images/logo3.png" width="100px" alt="partner 2" />
             </div>
           </div>
           <div className="col-md-6 my-auto">

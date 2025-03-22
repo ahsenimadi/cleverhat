@@ -16,7 +16,7 @@ const Navbar = () => {
             <div className="col-7 col-md-9 d-flex align-items-center">
               <div className="logo">
                 <Link to="/">
-                  <img src="images/logo.png" width="100" alt="logo" />
+                  <img src="./images/logo.png" width="100" alt="logo" />
                 </Link>
               </div>
               <ul
